@@ -20,23 +20,27 @@ public class DCTechView {
     @Given("Open modals in {string}")
     public static void clickOnDownArrows(String teamBox) {
         GenericUtils.waitUntilLoaderDisappear();
+        DriverAction.waitUntilElementAppear(By.xpath("//tr[@class='nodes']//table//tr//td//div[@class='node cursorPointer']//img"),10);
         DriverAction.scrollIntoView(By.xpath("//tr[@class='nodes']//table//tr//td//div[@class='node cursorPointer']//img"));
-        DriverAction.waitSec(1);
+
+        DriverAction.waitUntilElementAppear(By.xpath("//tr[@class='nodes']//table//tr//td//div[@class='node cursorPointer']//img"),10);
         DriverAction.hoverOver(By.xpath("//tr[@class='nodes']//table//tr//td//div[@class='node cursorPointer']//img"));
-        DriverAction.waitSec(1);
+
+        DriverAction.waitUntilElementAppear(By.xpath("//i[@class='edge verticalEdge bottomEdge fa fa-chevron-circle-down']"),10);
         DriverAction.getElement(By.xpath("//i[@class='edge verticalEdge bottomEdge fa fa-chevron-circle-down']")).click();
-        DriverAction.waitSec(1);
+
+        DriverAction.waitUntilElementAppear(CommonLocators.ecTeamBox(teamBox),10);
         DriverAction.scrollIntoView(CommonLocators.ecTeamBox(teamBox));
-        DriverAction.waitSec(1);
+        DriverAction.waitUntilElementAppear(CommonLocators.ecTeamBox(teamBox),10);
         DriverAction.hoverOver(CommonLocators.ecTeamBox(teamBox));
         chair = null;
         if (DriverAction.isExist(CommonLocators.chairBox(teamBox))) {
             chair = DriverAction.getElementText(CommonLocators.chairName(teamBox));
         }
-        DriverAction.waitSec(1);
+        DriverAction.waitUntilElementAppear(By.xpath("//i[@class='edge verticalEdge bottomEdge fa fa-chevron-circle-down']"),10);
         DriverAction.getElement(By.xpath("//i[@class='edge verticalEdge bottomEdge fa fa-chevron-circle-down']")).click();
 
-        DriverAction.waitSec(2);
+        DriverAction.waitUntilElementAppear(By.xpath("(//tr[@class='nodes'])[3]/td/table//div[@class='node cursorPointer']"),10);
         firstRowEmployees = DriverAction.getElements(By.xpath("(//tr[@class='nodes'])[3]/td/table//div[@class='node cursorPointer']"));
 
         List<WebElement> members = DriverAction.getElements(By.xpath("(//tr[@class='nodes'])[3]/td/table"));

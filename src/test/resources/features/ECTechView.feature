@@ -1,4 +1,4 @@
-@testECViewHO
+@regression
 Feature: EC view data validations
 
   Background: Verify if user successfully log into Orgchart
@@ -17,7 +17,7 @@ Feature: EC view data validations
     Then Check employee in EC view for "Accounts" of OrgChart
 
 
-  Scenario: Verify EC view for Accounts
+  Scenario: Verify EC view for Admin
     Given Open modals box in EC View "Admin"
     Then Check employee in EC view for "Admin" of OrgChart
 

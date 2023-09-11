@@ -12,7 +12,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class LoginSrepDefinition {
+public class LoginStepDefinition {
     @Then("^Switch to \"(.*)\" view$")
     public static void switchToView(String viewName) {
         try {
@@ -63,7 +63,7 @@ public class LoginSrepDefinition {
                 }
                 GenericUtils.waitUntilElementAppear(CommonLocators.loginPswd);
                 if (DriverAction.isExist(CommonLocators.loginPswd)) {
-                    DriverAction.typeText(CommonLocators.loginPswd, "HimuJune@1808");
+                    DriverAction.typeText(CommonLocators.loginPswd, "HimuAug@1808");
                     DriverAction.click(CommonLocators.submitButton);
                 }
                 GenericUtils.waitUntilElementAppear(CommonLocators.submitButton);
